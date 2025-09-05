@@ -16,5 +16,23 @@ existeConexion(Origen, Destino):-
 conectadosDesdeyCosto(Origen, Destino, Costo):-
     conexion(Origen, Destino, Costo).
 
+tieneAristas(K):- 
+    conexion(K, _, _).
+
+viajeConCosto(Origen, Destino, CostoTotal):-
+    conexion(Origen, Intermedia, Costo1),
+	conexion(Intermedia, Destino, Costo2),
+	CostoTotal is Costo1 + Costo2. 
+
+%Caso base es el viaje directo (segunda regla)
+%Caso recursivo (viaje con escalas)
+conectadosDesdeyCosto(Origen, Destino, CostoTotal):-
+    conexion(Origen, Intermedio, Costo1),
+    conectadosDesdeyCosto(Intermedio, Destino, Costo2),
+    CostoTotal is Costo1 + Costo2.
+
+
+
+
 
 
