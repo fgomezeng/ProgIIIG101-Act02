@@ -5,7 +5,7 @@ conexion(edmonton, saskatoon, 12).
 conexion(calgary, edmonton, 4).
 conexion(calgary, regina, 14).
 conexion(saskatoon, calgary, 9).
-conexion(saskatoon, t, 20).
+conexion(saskatoon, winnipeg, 20).
 conexion(regina, saskatoon, 7).
 conexion(regina, winnipeg, 4).
 
